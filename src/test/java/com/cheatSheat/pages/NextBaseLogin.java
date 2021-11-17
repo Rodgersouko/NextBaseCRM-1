@@ -8,6 +8,12 @@ public class NextBaseLogin {
     @FindBy(xpath = "//div[.='Authorization']")
     public WebElement headerElement;
 
+    @FindBy(xpath = "//input[@name='USER_LOGIN']")
+    public WebElement usernameBox;
+
+    @FindBy(xpath = "")
+    public WebElement passwordBox;
+
 
 
 
