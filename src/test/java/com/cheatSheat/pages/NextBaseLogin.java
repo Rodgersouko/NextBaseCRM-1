@@ -26,6 +26,15 @@ public class NextBaseLogin {
 
     }
 
+    public void goTo(){
+        Driver.getDriver().navigate().to("https://login.nextbasecrm.com/");
+
+    }
+
+    public void login(){
+
+    }
+
 
 
 
