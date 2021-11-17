@@ -21,6 +21,9 @@ public class NextBaseLogin {
     @FindBy(className = "login-btn")
     public  WebElement submitBtn;
 
+    @FindBy(xpath = "//div[@class='errortext']")
+    public WebElement errorMsg;
+
     public NextBaseLogin(){
         PageFactory.initElements(Driver.getDriver(),this);
 
@@ -37,6 +40,12 @@ public class NextBaseLogin {
         this.usernameBox.sendKeys(username);
         this.passwordBox.sendKeys(password);
         this.submitBtn.click();
+
+    }
+
+    public boolean loginErrorMsgPresent(){
+
+        return  this.errorMsg.isDisplayed()  ;
 
     }
 
