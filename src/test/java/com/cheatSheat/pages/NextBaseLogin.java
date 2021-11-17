@@ -1,5 +1,6 @@
 package com.cheatSheat.pages;
 
+import com.cheatSheat.utility.ConfigReader;
 import com.cheatSheat.utility.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,6 +32,7 @@ public class NextBaseLogin {
 
     public void goTo(){
         Driver.getDriver().navigate().to("https://login.nextbasecrm.com/");
+
 
     }
 
