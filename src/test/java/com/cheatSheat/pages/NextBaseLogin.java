@@ -31,9 +31,16 @@ public class NextBaseLogin {
 
     }
 
-    public void login(){
+    public void login(String username, String password ){
+
+
+        this.usernameBox.sendKeys(username);
+        this.passwordBox.sendKeys(password);
+        this.submitBtn.click();
 
     }
+
+
 
 
 
