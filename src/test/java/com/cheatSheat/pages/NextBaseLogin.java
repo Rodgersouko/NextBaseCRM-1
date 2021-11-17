@@ -31,7 +31,7 @@ public class NextBaseLogin {
     }
 
     public void goTo(){
-        Driver.getDriver().navigate().to("https://login.nextbasecrm.com/");
+        Driver.getDriver().navigate().to( ConfigReader.read("url"));
 
 
     }
