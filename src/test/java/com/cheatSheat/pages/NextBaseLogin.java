@@ -11,7 +11,7 @@ public class NextBaseLogin {
     @FindBy(xpath = "//input[@name='USER_LOGIN']")
     public WebElement usernameBox;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@name='USER_PASSWORD']")
     public WebElement passwordBox;
 
 
