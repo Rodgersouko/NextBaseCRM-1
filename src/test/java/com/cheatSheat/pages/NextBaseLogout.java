@@ -30,6 +30,6 @@ public class NextBaseLogout {
     public void logout(){
         userMenu.click();
 
-        Select select = new Select();
+        logoutBtn.click();
     }
 }
