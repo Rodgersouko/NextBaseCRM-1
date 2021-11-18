@@ -24,7 +24,7 @@ public class nextbaseSendMsgTest extends TestBase {
         nextBaseSendMsg.messageTab();
         BrowserUtil.waitFor(2);
 
-//        nextBaseSendMsg.sendMsg();
+        nextBaseSendMsg.sendMsgWithoutCon();
 //
 //        BrowserUtil.waitFor(2);
 //        nextBaseSendMsg.verifyElements();
