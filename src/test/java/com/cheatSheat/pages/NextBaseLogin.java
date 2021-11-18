@@ -1,5 +1,6 @@
 package com.cheatSheat.pages;
 
+import com.cheatSheat.utility.ConfigReader;
 import com.cheatSheat.utility.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,13 +22,17 @@ public class NextBaseLogin {
     @FindBy(className = "login-btn")
     public  WebElement submitBtn;
 
+    @FindBy(xpath = "//div[@class='errortext']")
+    public WebElement errorMsg;
+
     public NextBaseLogin(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
 
     public void goTo(){
-        Driver.getDriver().navigate().to("https://login.nextbasecrm.com/");
+        Driver.getDriver().navigate().to( ConfigReader.read("url"));
+
 
     }
 
@@ -37,6 +42,12 @@ public class NextBaseLogin {
         this.usernameBox.sendKeys(username);
         this.passwordBox.sendKeys(password);
         this.submitBtn.click();
+
+    }
+
+    public boolean loginErrorMsgPresent(){
+
+        return  this.errorMsg.isDisplayed()  ;
 
     }
 
