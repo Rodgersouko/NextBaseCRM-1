@@ -25,6 +25,7 @@ public class NextBaseSendMsg {
     public WebElement activityStream;
 
     //body[contenteditable=true][style='min-height: 184px;']
+
     @FindBy(xpath = "/html/body[@contenteditable='true'][@style='min-height: 184px;'][.='']")
     public WebElement sendMsgBody;
 
@@ -90,15 +91,17 @@ public class NextBaseSendMsg {
 
     }
 
+    public void sendMsgWithCon(){
+        this.sendMsgBody.sendKeys("Body test");
+        this.sendBtn.click();
+        //this.activityStream.isDisplayed();
+    }
+
     public void verifyElements() {
-        //BrowserUtils.waitForVisibility(uploadfiles2, 10);
-        //assertTrue(addMentions.isDisplayed());
-        //BrowserUtils.waitForVisibility(selectDocument, 5);
-        //assertTrue(titleHide.isDisplayed());
-        //BrowserUtils.waitForVisibility(downloadDocument, 5);
-        //assertTrue(fileUpload.isDisplayed());
-        //BrowserUtils.waitForVisibility(desktopApplication, 5);
-        //assertTrue(link.isDisplayed());
+        assertTrue(addMentions.isDisplayed());
+       // assertTrue(recordVideo.isDisplayed());
+        assertTrue(fileUpload.isDisplayed());
+        assertTrue(link.isDisplayed());
     }
 
 
