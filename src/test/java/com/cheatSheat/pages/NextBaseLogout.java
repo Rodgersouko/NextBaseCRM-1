@@ -32,4 +32,9 @@ public class NextBaseLogout {
 
         logoutBtn.click();
     }
+
+    public boolean inputBoxDisplayed(){
+        return inputBox.isDisplayed();
+
+    }
 }

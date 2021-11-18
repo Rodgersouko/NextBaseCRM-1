@@ -21,7 +21,11 @@ public class NextBaseLogoutTest extends TestBase {
         nextBaseLogout.goTo();
         nextBaseLogin.login(username,password);
 
-        BrowserUtil.waitFor(3);
+        BrowserUtil.waitFor(2);
+
+        nextBaseLogout.inputBoxDisplayed();
+
+        BrowserUtil.waitFor(2);
 
         nextBaseLogout.logout();
 
