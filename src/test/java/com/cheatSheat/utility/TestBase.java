@@ -15,6 +15,7 @@ public abstract class TestBase {
     public void setupWebDriver(){
 
         driver =  Driver.getDriver() ;
+        driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS) ;
     }
