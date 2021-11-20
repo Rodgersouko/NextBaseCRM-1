@@ -34,9 +34,10 @@ public class nextbaseSendMsgTest extends TestBase {
 //        BrowserUtil.waitFor(2);
 //
         nextBaseSendMsg.currentUrl();
-//        nextBaseSendMsg.errorMsgIsDisplayed();
+
 
 
     }
+
 
 }

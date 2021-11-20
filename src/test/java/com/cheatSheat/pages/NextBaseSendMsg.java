@@ -2,6 +2,8 @@ package com.cheatSheat.pages;
 
 import com.cheatSheat.utility.ConfigReader;
 import com.cheatSheat.utility.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,6 +18,9 @@ public class NextBaseSendMsg {
     @FindBy(id = "feed-add-post-form-tab-message")
     public WebElement sendMsgTab;
 
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
+    public WebElement sendMsgBody;
+
     // //*[@id="blog-submit-button-save"] sendBtn
     @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]")
     public WebElement sendBtn;
@@ -25,9 +30,6 @@ public class NextBaseSendMsg {
     public WebElement activityStream;
 
     //body[contenteditable=true][style='min-height: 184px;']
-
-    @FindBy(xpath = "/html/body[@contenteditable='true'][@style='min-height: 184px;'][.='']")
-    public WebElement sendMsgBody;
 
     //  //*[@id="feed-add-post-form-notice-blockblogPostForm"]/div/span[2]
     @FindBy(xpath = "//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]")
@@ -92,8 +94,12 @@ public class NextBaseSendMsg {
     }
 
     public void sendMsgWithCon(){
-        this.sendMsgBody.sendKeys("Body test");
-        this.sendBtn.click();
+
+        Driver.getDriver().switchTo().frame(1);
+
+        WebElement sendMsgBody = Driver.getDriver().findElement(By.xpath("//body[.='']"));
+        sendMsgBody.sendKeys("rodgers ");
+        this.sendBtn.submit();
         //this.activityStream.isDisplayed();
     }
 
