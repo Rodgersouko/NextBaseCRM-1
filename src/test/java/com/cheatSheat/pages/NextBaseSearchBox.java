@@ -5,8 +5,10 @@ import com.cheatSheat.utility.Driver;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 
 import org.openqa.selenium.support.events.WebDriverEventListener;
@@ -43,7 +45,10 @@ public class NextBaseSearchBox {
 
     public void setHeaderSearchAfterClick(){
         String expected =headerSearchBox.getAttribute("class");
-       // Action action = new Action(driver);
+
+        Actions action = new Actions(Driver.getDriver());
+        action.doubleClick(headerSearchBox).sendKeys("hr").perform();
+
         System.out.println("expected = " + expected);
         assertEquals(expected,"header-search header-search-empty");
 
