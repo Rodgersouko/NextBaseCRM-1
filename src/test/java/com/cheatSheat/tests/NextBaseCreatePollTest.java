@@ -53,6 +53,58 @@ public class NextBaseCreatePollTest  extends TestBase {
         createPollFunction.addQuestion(); // click the add question link
         BrowserUtil.waitFor(1);   // wait for one second
 
+        WebElement question1 = Driver.getDriver().findElement(By.xpath("//input[@id='question_1']"));
+        WebElement answer1a = Driver.getDriver().findElement(By.xpath("//input[@id='answer_1__0_']"));
+        WebElement answer2a = Driver.getDriver().findElement(By.xpath("//input[@id='answer_1__1_']"));
+
+        assertTrue(question1.isDisplayed());
+        assertTrue(answer1a.isDisplayed());
+        assertTrue(answer2a.isDisplayed());
+
+       // Poll section should be collapsed cancel a poll by clicking on “cancel”button.
+        createPollFunction.cancelPoll();
+        assertFalse(question1.isDisplayed());
+
+        /*
+        BrowserUtil.waitFor(1);
+        createPollFunction.poll();
+
+        BrowserUtil.waitFor(2);
+
+        //*********
+        //The Poll should be displayed on top of the feed after successfully created & sent.
+
+        driver.switchTo().frame(createPollFunction.iframeElm);
+
+        createPollFunction.clickIFrame();
+        createPollFunction.iframeElm.sendKeys("Hello World");
+
+        driver.switchTo().defaultContent();
+        BrowserUtil.waitFor(1);
+
+        createPollFunction.clickSendButton();
+
+         */
+        //The message title is not specified” should be displayed when a poll is being created without title.
+        BrowserUtil.waitFor(1);
+        createPollFunction.poll();
+        createPollFunction.clickSendButton();
+        BrowserUtil.waitFor(1);
+        // confirm error message is displayed
+        assertTrue(createPollFunction.MsgNotSpecified.isDisplayed());
+        // confirm the error message displayed is correct.
+        assertEquals("The message title is not specified", createPollFunction.MsgNotSpecified.getText());
+
+
+
+
+
+
+
+
+
+
+
 
 
 
