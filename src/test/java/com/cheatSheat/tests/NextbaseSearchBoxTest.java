@@ -23,7 +23,9 @@ public class NextbaseSearchBoxTest extends TestBase {
         nextBaseLogin.login(username, password);
 
         BrowserUtil.waitFor(2);
+        nextBaseSearchBox.headersearchBeforeClick();
 
 
     }
+
 }
